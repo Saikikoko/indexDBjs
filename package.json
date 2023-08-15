@@ -1,0 +1,27 @@
+{
+  "name": "indexdbjs",
+  "description": "A simple, lightweight JavaScript API for handling browser indexDB",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Saikikoko/indexDBjs.git"
+  },
+  "keywords": [
+    "IndexDB"
+  ],
+  "author": "saikikoko",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Saikikoko/indexDBjs/issues"
+  },
+  "homepage": "https://github.com/Saikikoko/indexDBjs#readme",
+  "devDependencies": {
+    "eslint": "^8.47.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.2"
+  }
+}
