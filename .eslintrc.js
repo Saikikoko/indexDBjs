@@ -26,5 +26,6 @@ module.exports = {
     'no-unused-vars': 1,
     'no-unused-expressions': 0,
     'class-methods-use-this': 0,
+    'import/no-extraneous-dependencies': 0,
   },
 };

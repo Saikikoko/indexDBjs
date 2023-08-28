@@ -6,6 +6,87 @@
   <title>Document</title>
 </head>
 <body>
-<script src="./DBExtend.js" type="module"></script>
+<script src="../dist/indexdb.js"></script>
+<script >
+  console.log(window.IndexDB)
+  const testDB = new IndexDB('test', 2, [
+    { name: 'test' },
+  ]);
+  testDB.init(true).then(() => {
+    const testTable = new DBExtend('test')
+
+    testTable.addOrPut({
+      name: '123'
+    })
+  })
+
+  /**
+   * search数据库
+   * @class
+   */
+  class DBExtend {
+    constructor(name) {
+      this.tableName = name;
+    }
+
+    add(value, key) {
+      return testDB.add(this.tableName, value, key);
+    }
+
+    put(value, key) {
+      return testDB.put(this.tableName, value, key);
+    }
+
+    addOrPut(value, searchKey, key) {
+      return testDB.addOrPut(this.tableName, value, searchKey, key);
+    }
+
+    clear() {
+      return testDB.clear(this.tableName);
+    }
+
+    remove(key) {
+      return testDB.remove(this.tableName, key);
+    }
+
+    count(key) {
+      return testDB.count(this.tableName, key);
+    }
+
+    getIndex(indexName, key) {
+      return testDB.getIndex(this.tableName, indexName, key);
+    }
+
+    getIndexCount(indexName, key) {
+      return testDB.getIndexCount(this.tableName, indexName, key);
+    }
+
+    removeIndex(indexName, key) {
+      return testDB.removeIndex(this.tableName, indexName, key);
+    }
+
+    getKey(name) {
+      return testDB.getKey(this.tableName, name);
+    }
+
+    get(key) {
+      return testDB.get(this.tableName, key);
+    }
+
+    getAll(query, count) {
+      return testDB.getAll(this.tableName, query, count);
+    }
+
+    getAllKeys(query, count) {
+      return testDB.getAllKeys(this.tableName, query, count);
+    }
+
+    close() {
+      return testDB.close();
+    }
+  }
+
+
+</script>
 </body>
 </html>
