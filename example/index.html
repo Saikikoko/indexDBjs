@@ -8,20 +8,6 @@
 <body>
 <script src="../dist/indexdb.js"></script>
 <script >
-  const testDB = new IndexDB('test', 2, [
-    { name: 'test', options: { keyPath: 'id' }  },
-  ]);
-  testDB.init({
-    debug: true
-  }).then(() => {
-    const testTable = new DBExtend('test')
-
-    testTable.addOrPut({
-      name: '123',
-      id: new Date().getTime()
-    }, 'id')
-  })
-
   /**
    * search数据库
    * @class
@@ -87,6 +73,32 @@
       return testDB.close();
     }
   }
+
+  const testDB = new IndexDB('test', 2, [
+    { name: 'test', options: { keyPath: 'id' }  },
+  ]);
+  testDB.init({
+    debug: true
+  }).then(() => {
+    const testTable = new DBExtend('test')
+
+    testTable.addOrPut({
+      name: '123',
+      id: new Date().getTime()
+    }, 'id')
+
+    testDB.add('test', {
+      name: 'foo',
+      gender: 'male',
+      id: new Date().getTime() + 1
+    })
+
+    testDB.put('test', {
+      name: 'foo',
+      gender: 'male',
+      id: new Date().getTime() + 1
+    })
+  })
 
 </script>
 </body>
