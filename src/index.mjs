@@ -1,4 +1,4 @@
-import CustomLog from './utils/log.mjs';
+import CustomLog from './utils/log';
 
 const dbLog = new CustomLog('DB');
 
